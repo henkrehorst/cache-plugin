@@ -272,7 +272,7 @@ final class CachePlugin implements Plugin
     /**
      * Verify that we can cache this request.
      */
-    private function isCacheableRequest(RequestInterface $request): bool
+    protected function isCacheableRequest(RequestInterface $request): bool
     {
         $uri = $request->getUri()->__toString();
         foreach ($this->config['blacklisted_paths'] as $regex) {
